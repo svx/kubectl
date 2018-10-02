@@ -9,7 +9,7 @@ RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
 # Name
-NAME = dersven/kubectl
+NAME = dersvens/kubectl
 # Get version form VERSION
 VERSION := $(shell cat VERSION)
 
@@ -41,4 +41,4 @@ last_built_date: ## Show last build date
 	@docker inspect -f '{{ .Created }}' $(NAME):$(VERSION)
 
 .PHONY: release
-release: testhtml image tag_latest push ## Combine steps to make release
+release: image tag_latest push ## Combine steps to make release
